@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { initializePayment } from "@/lib/paystack";
+// import { initializePayment } from "@/lib/paystack";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -13,7 +13,7 @@ export default function InitializePayment() {
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
+  // const [isProcessing, setIsProcessing] = useState(false);
 
   const handleInitializePayment = async () => {
     setLoading(true);
@@ -32,14 +32,14 @@ export default function InitializePayment() {
       await axios.post("/api/vendor/payment/initialize", transactionData);
 
       // Then, call Paystack to initialize the payment
-      const res = await initializePayment({ email, amount: koboAmount });
+      // const res = await initializePayment({ email, amount: koboAmount });
 
-      if (res?.authorization_url) {
-        // Redirect the user to Paystack for payment authorization
-        window.location.href = res.authorization_url;
-      } else {
-        toast.error("Failed to initialize payment");
-      }
+      // if (res?.authorization_url) {
+      //   // Redirect the user to Paystack for payment authorization
+      //   window.location.href = res.authorization_url;
+      // } else {
+      //   toast.error("Failed to initialize payment");
+      // }
     } catch (err) {
       console.error(err);
       toast.error("An error occurred");
