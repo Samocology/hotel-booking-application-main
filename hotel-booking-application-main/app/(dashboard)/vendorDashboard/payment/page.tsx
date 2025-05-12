@@ -6,10 +6,14 @@ import { PaymentBreakdown } from "@/components/PaymentBreakdown";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Withdraw from "@/components/Withdraw";
-import InitializePayment from "@/components/InitializePayment";
-import BankDetailsForm from "@/components/BankDetailsForm";
-import SplitSetup from "@/components/SplitSetup";
-import FinancialOverview from "@/components/FinancialOverview";
+import FinancialOverview from "./FinancialOverview";
+import InitializePayment from "./initializePayment";
+import SplitSetup from "@/components/form-sections/SplitSetup";
+import BankDetailsForm from "./BankDetailsForm";
+// import InitializePayment from "@/app/";
+// import BankDetailsForm from "/BankDetailsForm";
+// import SplitSetup from "@/components/SplitSetup";
+// import FinancialOverview from "@/components/FinancialOverview";
 
 export default function PaymentPage() {
   return (
